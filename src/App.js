@@ -5,11 +5,11 @@ import SearchMethod from './SearchMethod';
 function App() {
 
   return (
-    <div>
-      <section>
+    <div className='app'>
+      <section className='feature'>
         <RandomFeature />
       </section>
-      <section>
+      <section className='search'>
         <h1>Bar Menu Helper</h1>
         <SearchMethod />
       </section>

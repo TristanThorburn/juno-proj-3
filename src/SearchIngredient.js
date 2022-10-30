@@ -1,23 +1,27 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import IngredientResults from './IngredientResults';
+import ResultsIngredient from './ResultsIngredient';
 
 const SearchIngredient = () => {
 
-    const [ searchValue, setSearchValue ] = useState('');
+    const [ searchValue, setSearchValue ] = useState('tequila');
     const [ input, setInput ] = useState('');
     const [ results, setResults ] = useState([]);
+    const [ error, setError ] = useState(null);
 
     useEffect(() => {
         axios({
-          url:'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=',
+          url:'https://www.thecocktaildb.com/api/json/v1/1/filter.php?',
           params:{
             i:searchValue,
           }
         }).then( (cocktails) => {
+          if (cocktails.data.drinks === undefined){
+            throw Error ('No cocktails match your search term, please try again');
+          }
           setResults(cocktails.data.drinks);
         }).catch(error => {
-            return error;
+            setError(error.message);
         });
       }, [input]);
 
@@ -31,9 +35,8 @@ const SearchIngredient = () => {
   
       return(
           <div>
-            <section>
+            <section className='searchBar'>
               <h3>Search by Cocktail Name</h3>
-              <p>FIGURE OUT ERROR HANDLING / NO RECIPES VIA THIS SEARCH</p>
               <form>
                 <label htmlFor='searchName' className='sr-only'>Enter Name</label>
                 <input 
@@ -46,7 +49,8 @@ const SearchIngredient = () => {
               </form>
             </section>
             <section>
-              <IngredientResults cocktails={ results } />
+            { error && <div>{ error } </div> }
+              <ResultsIngredient cocktails={ results } />
             </section>
           </div>
       )

@@ -1,0 +1,55 @@
+@import './variables.scss';
+
+.search{
+    grid-column:2;
+}
+
+h1{
+    font-size: clamp(2rem, 1.425rem + 2.875vw, 4.875rem);
+    font-family:$mainFont;
+    color:$burgundy;
+    text-align: right;
+    text-transform: uppercase;
+    margin-right:5%;
+}
+
+h2{
+    font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+    color:$burgundy;
+    font-family:$mainFont;
+    text-align:center;
+}
+
+.methodButtons{
+    display:flex;
+    justify-content: space-evenly;
+}
+button{
+    font-size:$generalP;
+    font-family:$mainFont;
+    width:40%;
+}
+
+.searchBar{
+    h3{
+        text-align: center;
+        font-size:$generalP;
+        font-family:$mainFont;
+    }
+    form{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-bottom:5%;
+    }
+    input{
+        font-size:$generalP;
+        font-family:$mainFont;
+        width:90%;
+        margin:auto;
+    }
+    button{
+        width:33%;
+        margin:20px auto;
+    }
+}

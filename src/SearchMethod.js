@@ -13,21 +13,23 @@ const SearchMethod = () => {
     return(
         <>
             <h2>How would you like to search for a recipe?</h2>
-            <button 
-                onClick={handleClick}
-                value='ingredient'
-                >Cocktail Ingredient</button>
-            <button 
-                onClick={handleClick}
-                value='name'
-                >Cocktail Name</button>
+            <div className='methodButtons'>
+                <button 
+                    onClick={handleClick}
+                    value='ingredient'
+                    >Cocktail Ingredient</button>
+                <button 
+                    onClick={handleClick}
+                    value='name'
+                    >Cocktail Name</button>
+            </div>
             {
                 searchMethod === 'name'
                 ? <SearchName />
                 : searchMethod === 'ingredient'
                     ? <SearchIngredient />
                     : null 
-            }    
+            }
         </>
     )
 }

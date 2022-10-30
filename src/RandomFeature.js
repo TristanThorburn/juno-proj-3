@@ -18,9 +18,8 @@ const RandomFeature = () => {
     return(
         <div>
             <h2>Why not Feature this?</h2>
-            <p>ERROR HANDLING? / NO RECIPE</p>
             <p>{feature.strDrink}</p>
-            <div>
+            <div className='featureImg'>
                 <img src={feature.strDrinkThumb} alt="An image of a cocktail" />
             </div>
         </div>

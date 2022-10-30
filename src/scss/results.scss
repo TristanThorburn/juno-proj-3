@@ -1,0 +1,46 @@
+@import './variables.scss';
+
+.results{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:2rem;
+    padding:0;
+    max-width:90%;
+    margin:auto;
+}
+.cocktail{
+    display:grid;
+    justify-content: center;
+    border: 5px solid $burgundy;
+    border-radius:10px;
+
+    h4{
+        font-family:$mainFont;
+        font-size: clamp(1.25rem, 0.6rem + 3.25vw, 4.5rem);
+        text-transform:uppercase;
+        text-align:center;
+        margin:10px auto;
+    }
+    p{
+        font-family:$mainFont;
+        font-size: $generalP;
+    }
+    .card{
+        width: 96%;
+        height: 96%;
+        margin:auto;
+    }
+    button{
+        font-size:$generalP;
+        width: 90%;
+        height: 90%;
+        margin:0 auto;
+    }
+}
+
+.ingredient{
+    grid-template-rows:1fr 1fr;
+}
+.name{
+    grid-template-rows:1fr 0.5fr 0.5fr;
+}

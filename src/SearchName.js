@@ -1,23 +1,27 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import SearchResults from './SearchResults';
+import ResultsName from './ResultsName';
 
 const SearchName = () => {
 
   const [ searchValue, setSearchValue ] = useState('');
   const [ input, setInput ] = useState('');
   const [ results, setResults ] = useState([]);
+  const [ error, setError ] = useState(null);
 
     useEffect(() => {
         axios({
-          url:'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=',
+          url:'https://www.thecocktaildb.com/api/json/v1/1/search.php?',
           params:{
             s:searchValue,
           }
         }).then( (cocktails) => {
+          if (cocktails.data.drinks === null){
+            throw Error ('No cocktails match your search term, please try again');
+          }
           setResults(cocktails.data.drinks);
         }).catch(error => {
-            return error;
+            setError(error.message);
         });
       }, [input]);
 
@@ -31,9 +35,8 @@ const SearchName = () => {
 
     return(
         <div>
-          <section>
+          <section className='searchBar'>
             <h3>Search by Cocktail Name</h3>
-            <p>FIGURE OUT ERROR HANDLING</p>
             <form>
               <label htmlFor='searchName' className='sr-only'>Enter Name</label>
               <input 
@@ -46,7 +49,8 @@ const SearchName = () => {
             </form>
           </section>
           <section>
-            <SearchResults cocktails={ results } />
+            { error && <div>{ error } </div> }
+            <ResultsName cocktails={ results } />
           </section>
         </div>
     )
