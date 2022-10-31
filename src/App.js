@@ -5,8 +5,9 @@ import SearchMethod from './SearchMethod';
 function App() {
 
   return (
+    <main>
     <div className='app'>
-      <button class='topOfPage'><a href="#topOfPage">To Top</a></button>
+      
       <section className='feature'>
         <RandomFeature />
       </section>
@@ -15,6 +16,11 @@ function App() {
         <SearchMethod />
       </section>
     </div>
+    <footer class='topOfPage'>
+        <button><a href="#topOfPage" class='toTop'>To Top</a></button>
+        <p>Made at <a href="https://www.junocollege.com">Juno College</a></p>
+    </footer>
+    </main>
   );
 }
 

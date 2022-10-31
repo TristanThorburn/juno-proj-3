@@ -5,7 +5,7 @@
 }
 
 h1{
-    font-size: clamp(2rem, 1.425rem + 2.875vw, 4.875rem);
+    font-size: $h1size;
     font-family:$mainFont;
     color:$burgundy;
     text-align: right;
@@ -14,7 +14,7 @@ h1{
 }
 
 h2{
-    font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+    font-size:calc($h1size / 1.9);
     color:$burgundy;
     font-family:$mainFont;
     text-align:center;
@@ -46,6 +46,7 @@ button{
         font-size:$generalP;
         font-family:$mainFont;
         width:90%;
+        height:3rem;
         margin:auto;
     }
     button{

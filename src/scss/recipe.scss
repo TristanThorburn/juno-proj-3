@@ -20,3 +20,9 @@
 .recipeTitle{
     text-align:center;
 }
+
+@media (min-width:768px) and (max-width:1024px){
+    .recipePop{
+        width:300%;
+    }
+}

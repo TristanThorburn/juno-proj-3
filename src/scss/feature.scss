@@ -2,7 +2,7 @@
 
 .feature{
     position:fixed;
-    top:20%;
+    top:5%;
     left:2%;
     width:20%;
     border:5px solid $burgundy;
@@ -18,5 +18,20 @@
         width:90%;
         height:90%;
         margin:auto;
+    }
+}
+
+@media (max-width:1024px){
+    .feature{
+        position:static;
+        width:100%;
+        margin:auto;
+
+        h2{
+            font-size:$generalP;
+        }
+        .featureImg{
+            width:50%;
+        }
     }
 }

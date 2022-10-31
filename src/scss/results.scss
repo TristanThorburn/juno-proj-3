@@ -10,7 +10,6 @@
 }
 .cocktail{
     display:grid;
-    justify-content: center;
     border: 5px solid $burgundy;
     border-radius:10px;
     position:relative;
@@ -40,8 +39,16 @@
 }
 
 .ingredient{
-    grid-template-rows:1fr 1fr;
+    grid-template-rows:1fr 0.5fr;
 }
 .name{
     grid-template-rows:1fr 0.5fr 0.5fr;
+    justify-content: center;
+}
+
+@media (max-width:767px){
+    .results{
+        display:flex;
+        flex-direction: column;
+    }
 }
