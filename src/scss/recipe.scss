@@ -1,0 +1,22 @@
+@import './variables.scss';
+
+.recipePop{
+    position:absolute;
+    z-index: 10;
+    background-color:$burgundy;
+    color:$oldPaper;
+    border: 5px solid $oldPaper;
+    top:0;
+    left:0;
+
+    p{
+        font-size: clamp(1.25rem, 0.9375rem + 1vw, 1.5rem);
+    }
+    button{
+        width:100%;
+    }
+}
+
+.recipeTitle{
+    text-align:center;
+}

@@ -6,11 +6,12 @@ function App() {
 
   return (
     <div className='app'>
+      <button class='topOfPage'><a href="#topOfPage">To Top</a></button>
       <section className='feature'>
         <RandomFeature />
       </section>
       <section className='search'>
-        <h1>Bar Menu Helper</h1>
+        <h1 id='topOfPage'>Bar Menu Helper</h1>
         <SearchMethod />
       </section>
     </div>
