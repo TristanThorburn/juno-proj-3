@@ -18,6 +18,11 @@
     button{
         width:50%;
         border:2px solid $burgundy;
+        cursor: pointer;
+
+        &:hover, :focus{
+            background-color:darken($oldPaper, 25%);
+        }
     }
 }
 

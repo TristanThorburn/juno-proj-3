@@ -20,7 +20,7 @@ const RandomFeature = () => {
             <h2>Why not try this?</h2>
             <p>{feature.strDrink}</p>
             <div className='featureImg'>
-                <img src={feature.strDrinkThumb} alt="An image of a cocktail" />
+                <img src={feature.strDrinkThumb} alt={'A picture of a' + feature.strDrink + 'cocktail'} />
             </div>
         </div>
     )

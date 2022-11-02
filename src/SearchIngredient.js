@@ -36,16 +36,16 @@ const SearchIngredient = () => {
       return(
           <div>
             <section className='searchBar'>
-              <h3>Search by Cocktail Name</h3>
-              <form>
-                <label htmlFor='searchName' className='sr-only'>Enter Name</label>
+              <h3>Search by Cocktail Ingredient</h3>
+              <form onSubmit={handleClick}>
+                <label htmlFor='searchName' className='sr-only'>Enter Ingredient</label>
                 <input 
                 type='text'
                 name='searchName'
-                placeholder='Enter Name'
+                placeholder='Enter Ingredient'
                 onChange={handleOnChange}
                 />
-                <button type='submit' onClick={handleClick}>Search</button>
+                <button type='submit'>Search</button>
               </form>
             </section>
             <section>

@@ -28,6 +28,7 @@ button{
     font-size:$generalP;
     font-family:$mainFont;
     width:40%;
+    cursor: pointer;
 }
 
 .searchBar{
@@ -52,5 +53,6 @@ button{
     button{
         width:33%;
         margin:20px auto;
+        cursor: pointer;
     }
 }

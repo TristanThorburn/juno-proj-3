@@ -37,7 +37,7 @@ const SearchName = () => {
         <div>
           <section className='searchBar'>
             <h3>Search by Cocktail Name</h3>
-            <form>
+            <form onSubmit={handleClick}>
               <label htmlFor='searchName' className='sr-only'>Enter Name</label>
               <input 
               type='text'
@@ -45,7 +45,7 @@ const SearchName = () => {
               placeholder='Enter Name'
               onChange={handleOnChange}
               />
-              <button type='submit' onClick={handleClick}>Search</button>
+              <button type='submit'>Search</button>
             </form>
           </section>
           <section>
