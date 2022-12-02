@@ -1,15 +1,16 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ResultsName from './ResultsName';
 
 const SearchName = () => {
 
   const [ searchValue, setSearchValue ] = useState('');
-  const [ input, setInput ] = useState('');
   const [ results, setResults ] = useState([]);
   const [ error, setError ] = useState(null);
 
-    useEffect(() => {
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      
         axios({
           url:'https://www.thecocktaildb.com/api/json/v1/1/search.php?',
           params:{
@@ -23,12 +24,8 @@ const SearchName = () => {
         }).catch(error => {
             setError(error.message);
         });
-      }, [input]);
+      };
 
-    const handleClick = (e) => {
-      e.preventDefault();
-      setInput(searchValue);
-    }
     const handleOnChange = (e) => {
       setSearchValue(e.target.value);
     }
@@ -37,7 +34,7 @@ const SearchName = () => {
         <div>
           <section className='searchBar'>
             <h3>Search by Cocktail Name</h3>
-            <form onSubmit={handleClick}>
+            <form onSubmit={handleSubmit}>
               <label htmlFor='searchName' className='sr-only'>Enter Name</label>
               <input 
               type='text'
