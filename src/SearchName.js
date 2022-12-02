@@ -57,10 +57,3 @@ const SearchName = () => {
 }
 
 export default SearchName;
-
-// APIs:
-    // glass:strGlass
-    // ingredients: strIngredient#
-    // measurements: strMeasure#
-      // convert to ounces?
-    // instruction: strInstructions
